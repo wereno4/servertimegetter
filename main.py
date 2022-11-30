@@ -17,5 +17,5 @@ async def root(url: str):
     try:
         date = urllib.request.urlopen(url).headers['Date']
         return {'time' : date}
-    except:
+    except ValueError:
         return {'error' : 'Please enter valid address'}
